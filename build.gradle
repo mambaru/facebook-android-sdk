@@ -1,0 +1,41 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.5.+'
+    }
+}
+
+apply plugin: 'android-library'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:18.0.+'
+}
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion rootProject.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'facebook/AndroidManifest.xml'
+            java.srcDirs = ['facebook/src']
+            resources.srcDirs = ['facebook/src']
+            aidl.srcDirs = ['facebook/src']
+            renderscript.srcDirs = ['facebook/src']
+            res.srcDirs = ['facebook/res']
+            assets.srcDirs = ['facebook/assets']
+        }
+    }
+}
