@@ -38,4 +38,9 @@ android {
             assets.srcDirs = ['facebook/assets']
         }
     }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
 }
